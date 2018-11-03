@@ -1,5 +1,5 @@
 //
-//  main.swift
+//  Literature.swift
 //  Levkovych
 //
 //  Created by Roman on 11/3/18.
@@ -8,4 +8,9 @@
 
 import Foundation
 
-
+enum Literature {
+    case Book
+    case Magazine
+    case Newspaper
+    case Empty
+}

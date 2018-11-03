@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		30B85141218E28AB00C56CAE /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B85140218E28AB00C56CAE /* main.swift */; };
+		30B85148218E301F00C56CAE /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B85147218E301F00C56CAE /* Book.swift */; };
+		30B8514A218E39A400C56CAE /* Genres.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B85149218E39A400C56CAE /* Genres.swift */; };
+		30B8514C218E39BB00C56CAE /* Literature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B8514B218E39BB00C56CAE /* Literature.swift */; };
+		30B8514E218E39CD00C56CAE /* LibraryBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B8514D218E39CD00C56CAE /* LibraryBook.swift */; };
+		30B85151218E3A6300C56CAE /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B85150218E3A6300C56CAE /* Library.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +30,11 @@
 /* Begin PBXFileReference section */
 		30B8513D218E28AB00C56CAE /* Levkovych */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Levkovych; sourceTree = BUILT_PRODUCTS_DIR; };
 		30B85140218E28AB00C56CAE /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		30B85147218E301F00C56CAE /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		30B85149218E39A400C56CAE /* Genres.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genres.swift; sourceTree = "<group>"; };
+		30B8514B218E39BB00C56CAE /* Literature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Literature.swift; sourceTree = "<group>"; };
+		30B8514D218E39CD00C56CAE /* LibraryBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryBook.swift; sourceTree = "<group>"; };
+		30B85150218E3A6300C56CAE /* Library.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,8 +68,21 @@
 			isa = PBXGroup;
 			children = (
 				30B85140218E28AB00C56CAE /* main.swift */,
+				30B8514F218E3A3100C56CAE /* Core */,
 			);
 			path = Levkovych;
+			sourceTree = "<group>";
+		};
+		30B8514F218E3A3100C56CAE /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				30B85147218E301F00C56CAE /* Book.swift */,
+				30B85150218E3A6300C56CAE /* Library.swift */,
+				30B8514D218E39CD00C56CAE /* LibraryBook.swift */,
+				30B8514B218E39BB00C56CAE /* Literature.swift */,
+				30B85149218E39A400C56CAE /* Genres.swift */,
+			);
+			path = Core;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -119,7 +142,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30B8514E218E39CD00C56CAE /* LibraryBook.swift in Sources */,
+				30B8514C218E39BB00C56CAE /* Literature.swift in Sources */,
+				30B8514A218E39A400C56CAE /* Genres.swift in Sources */,
+				30B85148218E301F00C56CAE /* Book.swift in Sources */,
 				30B85141218E28AB00C56CAE /* main.swift in Sources */,
+				30B85151218E3A6300C56CAE /* Library.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
