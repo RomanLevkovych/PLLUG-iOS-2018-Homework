@@ -18,16 +18,28 @@ struct Book {
 
 extension Book: Hashable {
     func hash(into hasher: inout Hasher) {
-        
+        hasher.combine(self.name)
+        hasher.combine(self.author)
+        hasher.combine(self.publisher)
     }
     
     static func == (lhs: Book, rhs: Book) -> Bool {
-        
+        var lhash = Hasher()
+        var rhash = Hasher()
+        lhs.hash(into: &lhash)
+        rhs.hash(into: &rhash)
+        return lhash.finalize() == rhash.finalize()
+    }
+    
+    var hashValue: Int {
+        var hash = Hasher()
+        self.hash(into: &hash)
+        return hash.finalize()
     }
 }
 
 extension Book: Equatable {
     static func !=(lhs: Book, rhs: Book) -> Bool {
-        
+        return lhs == rhs
     }
 }

@@ -77,8 +77,8 @@
 			isa = PBXGroup;
 			children = (
 				30B85147218E301F00C56CAE /* Book.swift */,
-				30B85150218E3A6300C56CAE /* Library.swift */,
 				30B8514D218E39CD00C56CAE /* LibraryBook.swift */,
+				30B85150218E3A6300C56CAE /* Library.swift */,
 				30B8514B218E39BB00C56CAE /* Literature.swift */,
 				30B85149218E39A400C56CAE /* Genres.swift */,
 			);
