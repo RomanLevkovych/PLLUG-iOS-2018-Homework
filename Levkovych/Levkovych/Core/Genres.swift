@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum Genres {
+enum Genres: String, Codable {
     case Tragedy
     case SciFi
     case Fantasy

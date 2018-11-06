@@ -9,33 +9,63 @@
 import Foundation
 
 class Library {
-    let name: String
-    private(set) var fond: Set<LibraryBook>
     
-    init(name: String, books: Book...) {
+    // MARK: - properties
+    let name: String
+    private(set) var fond: Set<Book>
+    private var history =  [Book: [History]]()
+    
+    struct History {
+        let date: Date
+        let owner: String
     }
     
-    func add(book: Book) {
-
+    init(name: String, books: Book...) {
+        self.name = name
+        self.fond = Set<Book>(books)
+        self.history = [Book : [History]]()
+        for book in self.fond {
+            history[book] = [History(date: Date(), owner: self.name)]
+        }
+    }
+    
+    func add(book: Book) throws {
+        if self.fond.contains(book) {
+            throw LibraryErrors.BookIsInLibrary
+        }
+        self.fond.insert(book)
+        self.history[book] = [History(date: Date(), owner: self.name)]
     }
     
     func take(book: Book, to owner: String) throws {
-        
+        if self.fond.contains(book) && self.history[book]?.last?.owner == self.name {
+            self.history[book]?.append(Library.History(date: Date(), owner: owner))
+        } else {
+            throw LibraryErrors.BookIsTaken
+        }
     }
     
     func getBack(book: Book) throws {
-        
+        if self.fond.contains(book) && self.history[book]?.last?.owner != self.name {
+            self.history[book]?.append(Library.History(date: Date(), owner: self.name))
+        } else {
+            throw LibraryErrors.BookHaveReturned
+        }
     }
     
-    func filter(by expr: (String) -> Bool) -> [Book] {
-        
+    func filter(by expr: @escaping (Book) -> Bool) -> [Book] {
+        return self.fond.filter(expr)
     }
     
     func available() -> [Book] {
-        
+        return self.history.reduce([], { part, value -> [Book] in
+            return part + ((value.value.last?.owner == self.name) ? [value.key] : [])
+        })
     }
     
     func taken() -> [Book] {
-        
+        return self.history.reduce([], { part, value -> [Book] in
+            return part + ((value.value.last?.owner != self.name) ? [value.key] : [])
+        })
     }
 }

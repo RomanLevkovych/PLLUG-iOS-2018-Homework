@@ -43,3 +43,18 @@ extension Book: Equatable {
         return lhs == rhs
     }
 }
+
+//extension Book: Codable {
+//    init(from decoder: Decoder) throws {
+//        <#code#>
+//    }
+//
+//    func encode(to encoder: Encoder) throws {
+//        <#code#>
+//    }
+//    
+//    private enum CodingKeys: CodingKey {
+//        
+//    }
+//    
+//}

@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum Literature {
+enum Literature: String, Codable {
     case Book
     case Magazine
     case Newspaper
